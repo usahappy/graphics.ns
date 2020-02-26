@@ -60,6 +60,11 @@ body {
     transition: background-color 0.1s;
 }
 
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .navbar #active {
     color: white;
     background-color: #EE274E;
