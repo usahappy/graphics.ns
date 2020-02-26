@@ -30,8 +30,16 @@ body {
 }
 
 .navbar {
+    width: 100%;
     overflow: hidden;
     background-color: #141414;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .navbar ul {
