@@ -77,7 +77,7 @@ body {
 
 .content-container {
     overflow: hidden;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 
 .content {
@@ -126,4 +126,62 @@ body {
 
 #footer-content-container {
     display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+#footer-content-container div {
+    margin-top: 20px;
+    flex-basis: 35%;
+}
+
+#footer-content-container #more-links ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#footer-content-container #more-links li {
+    margin-bottom: 5px;
+}
+
+#footer-content-container #more-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16pt;
+}
+
+#footer-content-container #more-links a:hover {
+    color: #FFC907;
+    text-decoration: underline;
+}
+
+#footer-content-container #social-icons p {
+    margin-top: 0;
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+
+#footer-content-container #social-icons ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+#footer-content-container #social-icons img {
+    padding: 7px;
+    height: 50px;
+}
+
+#footer-content-container #social-icons img:hover {
+    background-color: #EE274E;
+}
+
+.footer #copyright {
+    text-align: center;
+    font-size: 14pt;
 }
