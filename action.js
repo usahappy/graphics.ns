@@ -8,10 +8,6 @@ $(document).ready(function(){
     // sticking the navbar
     var navOrigin = $(".navbar").offset().top;
     
-    $(".content-container").each(function(){
-        $(this).data("unscrolled",true);
-    });
-    
     $(window).on("scroll",function(){
         var scrollTop = $(window).scrollTop();
         var scrollBottom = scrollTop + $(window).height();
@@ -27,18 +23,6 @@ $(document).ready(function(){
             $(".navbar + .content-container").css("padding-top","0");
         }
         
-        
-        $(".content-container").each(function() {
-            var currentTop = $(this).offset().top;
-            var currentHeight = $(this).height();
-            
-            if (currentTop <= (scrollBottom - (currentHeight*.5)) && $(this).data("unscrolled")) {
-                $(this).data("unscrolled",false);
-                $("html, body").animate({
-                    scrollTop: $(this).offset().top - navHeight
-                },1500);
-            }
-        });
     });
     
 });
