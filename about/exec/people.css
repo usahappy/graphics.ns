@@ -30,6 +30,7 @@ body {
 .navbar a::after {
     width: 0;
     height: 4px;
+    float: right;
     display: block;
     position: relative;
     transform: translate(0,-7px);
@@ -40,6 +41,7 @@ body {
 }
 
 .navbar a:hover::after {
+    float: left;
     width: 100%;
     background-color: #141414;
 }
