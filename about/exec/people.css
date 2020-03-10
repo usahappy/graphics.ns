@@ -272,12 +272,11 @@ body {
         font-size: 48pt;
     }
     .person #person-info h4 {
-        margin-top: -30px;
         font-size: 24pt;
     }
 }
 
-@media (max-aspect-ratio: 7/8) {
+@media (max-aspect-ratio: 12/13) {
     .navbar {
         visibility: hidden;
     }
