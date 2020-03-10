@@ -29,7 +29,7 @@ body {
 
 .navbar a::after {
     width: 0;
-    height: 4px;
+    height: 3px;
     float: right;
     display: block;
     position: relative;
@@ -82,7 +82,8 @@ body {
 
 .divider h1 {
     text-align: center;
-    margin: -10px;
+    line-height: 1;
+    margin: 20px 0;
     color: white;
     font-weight: 500;
     font-size: 64pt;
@@ -101,6 +102,7 @@ body {
     position: absolute;
     float: right;
     object-position: 80% 0;
+    z-index: -2;
 }
 
 .person #person-info {
@@ -112,17 +114,22 @@ body {
     margin: 0;
     width: calc(80% - 120px);
     overflow: hidden;
+    z-index: -2;
 }
 
 .person #person-info h2 {
     margin: 0;
     font-size: 64pt;
+    line-height: 1;
     color: #141414;
+    display: block;
 }
 
 .person #person-info h4 {
+    display: block;
     margin: 0;
-    margin-top: -50px;
+    line-height: 1;
+    margin-top: 10px;
     font-size: 36pt;
     color: #EE274E;
 }
@@ -142,4 +149,174 @@ body {
 
 .left-img h2 {
     text-align: right;
+}
+
+.mobile-navbar {
+    overflow: hidden;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.mobile-navbar #top {
+    display: block;
+    background-color: #141414;
+}
+
+.mobile-navbar #top #toggler { 
+    cursor: pointer;
+    width: 5vh;
+    height: 5vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+    left: calc(100% - 5vh - 25px);
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.mobile-navbar .hamburger {
+    height: 0.35vh;
+    width: 4.5vh;
+    left: calc(100% - 4.75vh - 25px);
+    background-color: white;
+    position: absolute;
+    top: 3vh;
+    transition: top 0.2s, transform 0.2s;
+}
+
+.mobile-navbar .hamburger::before, .mobile-navbar .hamburger::after {
+    width: 100%;
+    height: inherit;
+    background-color: inherit;
+    content: '';
+    position: absolute;
+    top: -1.25vh;
+    
+    transition: top 0.2s, transform 0.2s;
+}
+
+.mobile-navbar .hamburger::after {
+    top: 1.25vh;
+}
+
+.mobile-navbar #toggler:checked + .hamburger {
+    transform: rotate(-135deg);
+}
+
+.mobile-navbar #toggler:checked + .hamburger::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.mobile-navbar #toggler:checked + .hamburger::before {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.mobile-navbar #menu {
+    position: fixed;
+    text-align: center;
+    overflow: hidden;
+    background-color: #171717;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    top: -100vh;
+}
+
+.mobile-navbar #menu ul {
+    list-style: none;
+    font-size: 3vh;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-navbar li {
+    margin-top: 1vh;
+    background-color: #141414;
+}
+
+.mobile-navbar #menu li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 1350px) {
+    .left-img #person-info {
+        padding-right: 100px;
+    }
+    .right-img #person-info {
+        padding-left: 100px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .person #person-info {
+        padding-top: 22vh;
+    }
+    .left-img #person-info {
+        padding-right: 50px;
+    }
+    .right-img #person-info {
+        padding-left: 50px;
+    }
+    .person #person-info h2 {
+        font-size: 48pt;
+    }
+    .person #person-info h4 {
+        margin-top: -30px;
+        font-size: 24pt;
+    }
+}
+
+@media (max-aspect-ratio: 7/8) {
+    .navbar {
+        visibility: hidden;
+    }
+    .mobile-navbar {
+        visibility: visible;
+    }
+    
+    .headline p {
+        font-size: 2.35vh;
+        line-height: 1.4;
+        text-align: left;
+    }
+    .headline h1 {
+        margin-top: 25vh;
+        font-size: 7vh;
+    }
+    
+    .person {
+        height: 30vh;
+    }
+    .person img {
+        height: inherit;
+    }
+    .person #person-info {
+        padding-top: 8vh;
+        width: 70%;
+    }
+    .person #person-info h2 {
+        font-size: 5vh;
+        line-height: 0.9;
+    }
+    .person #person-info h4 {
+        font-size: 2.2vh;
+        margin-top: 20px;
+        line-height: 1.1;
+        width: 80%;
+    }
+    .left-img h4 {
+        position: relative;
+        left: 20%;
+    }
 }
