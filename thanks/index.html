@@ -1,1 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thank You | Emory RHA</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/bdf8vqg.css">
+        <link rel="stylesheet" href="https://rha.nicholasskelley.com/main.css">
+        
+        <link rel="icon" type="image/png" href="images/icon.png">
+        <link rel="preload" href="images/headline1.jpg" as="image/jpg">
+        
+        <style>
+            * {
+                --headline-red: #fa1e4ae6;
+                --red: #fa1e4a;
+            }
+            
+            body {
+                background: #141414;
+            }
+            
+            .headline {
+                background: linear-gradient(var(--headline-red),var(--headline-red)), url(images/headline1.jpg);
+                background-size: 100% auto;
+                background-position: left 50% top -180px;
+            }
+            
+            .headline h1 {
+                position: relative;
+                top: calc(50% + 50px);
+                transform: translate(0,-50%);
+                letter-spacing: 30px;
+            }
+            
+            .tagline p {
+                position: relative;
+                top: 50%;
+                transform: translate(0,-50%);
+                
+                width: 90%;
+                max-width: 1300px;
+                
+                margin: 0 auto;
+                text-align: justify;
+                text-align-last: center;
+                
+                color: white;
+                font-size: 24pt;
+            }
+            
+            .cards-container {
+                width: calc(100% - 20px);
+                margin: 10px auto;
+                padding-bottom: 100px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 200px;
+                column-gap: 10px;
+                grid-row-gap: 10px;
+            }
+            
+            .card:nth-child(3n + 2) {
+                top: 100px;
+            }
+            
+            .card {
+                position: relative;
+                display: block;
+                background: white;
+                padding: 20px;
+            }
+            
+            .card p {
+                text-align: center;
+                position: relative;
+                top: calc(50% - 20px);
+                transform: translate(0,-50%);
+            }
+            
+            @media screen and (max-width: 1920px) {
+                .headline {
+                    background-size: 1920px auto;
+                }
+            }
+            
+            @media screen and (max-width: 1640px) {
+                .headline {
+                    background-size: 1640px auto;
+                    background-position: left 50% top -150px;
+                }
+            }
+            
+            @media screen and (min-width: 1360px) {
+                /* MASONRY FILLERS */
+                .card:nth-child(8)::before, .card:nth-child(8)::after { /* MUST EDIT TO BE THE LAST CENTER CARD */
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: calc(50% - 10px);
+                    top: calc(50% + 10px);
+                    left: calc(-100% - 10px);
+                    background: white;
+                }
 
+                .card:nth-child(8)::after { /* MUST EDIT TO BE THE LAST CENTER CARD */
+                    left: calc(100% + 10px);
+                }
+
+                .card:nth-child(2)::before {
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: calc(50% - 10px);
+                    top: -50%;
+                    left: 0;
+                    background: white;
+                }
+                /* END OF MASONRY FILLERS */
+            }
+            
+            @media screen and (max-width: 1360px) {
+                .headline {
+                    background-size: 1360px auto;
+                    background-position: left 50% top -125px;
+                }
+                
+                .tagline p {
+                    font-size: 22pt;
+                }
+                
+                .cards-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .card:nth-child(3n+2) {
+                    top: 0;
+                }
+                
+                .card:nth-child(3n) {
+                    grid-column-end: span 2;
+                }
+                
+                .card::before {
+                    display: none;
+                }
+            }
+            
+            @media screen and (max-width: 1160px) {
+                .headline {
+                    background-size: 1160px auto;
+                    background-position: left 50% top -105px;
+                }
+                
+                h1 {
+                    font-size: 72pt;
+                    letter-spacing: 20px;
+                }
+                
+                .tagline p {
+                    font-size: 20pt;
+                }
+            }
+            
+            @media screen and (max-aspect-ratio: 3/4) {
+                .cards-container {
+                    grid-template-columns: 1fr;
+                }
+                
+                .card:nth-child(3n) {
+                    grid-column-end: span 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="headline">
+            <h1>thank you</h1>
+        </div>
+        <div class="tagline">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card">
+                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+        
+        <script>
+            var viewTop = $(window).scrollTop();
+            var viewBottom = viewTop + $(window).height();
+            
+            console.log(viewTop + ", " + viewBottom);
+            $(".card").each(function(){
+                var elemTop = $(this).offset().top;
+                console.log("top: " + elemTop);
+                if (!(elemTop > viewTop && elemTop <= viewBottom)) {
+                    $(this).data("top-origin", $(this).css("top"));
+                    $(this).css("top","+=50").css("opacity",0);
+                }
+            });
+            
+            
+            $(window).on("scroll",function(){
+                viewTop = $(window).scrollTop();
+                viewBottom = viewTop + $(window).height();
+                
+                $(".card").each(function(){
+                    var elemTop = $(this).offset().top;
+                    var elemBottom = elemTop + $(this).height();
+                    if (elemTop > viewTop && elemBottom <= viewBottom) {
+                        $(this).animate({
+                            opacity: 1,
+                            top: $(this).data("top-origin")
+                        }, 500)
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
