@@ -7,7 +7,9 @@
         <link rel="stylesheet" href="https://use.typekit.net/bdf8vqg.css">
         <link rel="stylesheet" href="https://rha.nicholasskelley.com/main.css">
         
-        <link rel="icon" type="image/png" href="images/icon.png">
+        <link rel="icon" type="image/png" href="images/black-brandmark@1k.png" media="(prefers-color-scheme: light)">
+        <link rel="icon" type="image/png" href="images/white-brandmark@1k.png" media="(prefers-color-scheme: dark)">
+        
         <link rel="preload" href="images/headline1.jpg" as="image/jpg">
         
         <style>
@@ -26,9 +28,14 @@
                 background-position: left 50% top -180px;
             }
             
+            .headline img {
+                position: relative;
+                top: 60px;
+                height: 50px;
+            }
             .headline h1 {
                 position: relative;
-                top: calc(50% + 50px);
+                top: calc(50% - 20px);
                 transform: translate(0,-50%);
                 letter-spacing: 30px;
             }
@@ -60,10 +67,6 @@
                 grid-row-gap: 10px;
             }
             
-            .card:nth-child(3n + 2) {
-                top: 100px;
-            }
-            
             .card {
                 position: relative;
                 display: block;
@@ -93,32 +96,16 @@
             
             @media screen and (min-width: 1360px) {
                 /* MASONRY FILLERS */
-                .card:nth-child(8)::before, .card:nth-child(8)::after { /* MUST EDIT TO BE THE LAST CENTER CARD */
+                .card.masonry { /* MUST EDIT TO BE THE LAST CENTER CARD */
                     display: block;
                     position: absolute;
-                    content: '';
-                    width: 100%;
-                    height: calc(50% - 10px);
-                    top: calc(50% + 10px);
-                    left: calc(-100% - 10px);
-                    background: white;
-                }
-
-                .card:nth-child(8)::after { /* MUST EDIT TO BE THE LAST CENTER CARD */
-                    left: calc(100% + 10px);
-                }
-
-                .card:nth-child(2)::before {
-                    display: block;
-                    position: absolute;
-                    content: '';
-                    width: 100%;
-                    height: calc(50% - 10px);
-                    top: -50%;
-                    left: 0;
                     background: white;
                 }
                 /* END OF MASONRY FILLERS */
+                
+                .card:nth-child(3n + 2):not(.masonry) {
+                    top: 100px !important;
+                }
             }
             
             @media screen and (max-width: 1360px) {
@@ -136,14 +123,14 @@
                 }
                 
                 .card:nth-child(3n+2) {
-                    top: 0;
+                    top: 0 !important;
                 }
                 
                 .card:nth-child(3n) {
                     grid-column-end: span 2;
                 }
                 
-                .card::before {
+                .card.masonry {
                     display: none;
                 }
             }
@@ -185,10 +172,11 @@
     </head>
     <body>
         <div class="headline">
+            <img src="images/white-brandmark@2k.png">
             <h1>thank you</h1>
         </div>
         <div class="tagline">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>To everyone who has offered their support, their assistance, their guidance, and their hope to the Emory community during the COVID-19 outbreak, thank you. </p>
         </div>
         
         <div class="cards-container">
@@ -221,20 +209,64 @@
             </div>
         </div>
         
+        <div class="card masonry" id="spacer1"></div>
+        <div class="card masonry" id="spacer2"></div>
+        <div class="card masonry" id="spacer3"></div>
+        
         <script>
-            var viewTop = $(window).scrollTop();
-            var viewBottom = viewTop + $(window).height();
             
-            console.log(viewTop + ", " + viewBottom);
-            $(".card").each(function(){
-                var elemTop = $(this).offset().top;
-                console.log("top: " + elemTop);
-                if (!(elemTop > viewTop && elemTop <= viewBottom)) {
-                    $(this).data("top-origin", $(this).css("top"));
-                    $(this).css("top","+=50").css("opacity",0);
+            window.matchMedia("(prefers-color-scheme:dark)").addListener(function(e) {
+                console.log(e.matches);
+                if (e.matches) {
+                    var newIcon = '<link rel="icon" href="images/white-brandmark@1k">';
+                    $("head").append(newIcon);
+                } else if (!e.matches) {
+                    var newIcon = '<link rel="icon" href="images/black-brandmark@1k">';
+                    $("head").append(newIcon);
                 }
             });
             
+            
+            function adjustMasonry() {
+                var spacerHeight = ($(".card:not(.masonry)").height()/2) - 30;
+                var spacerWidth = $(".card:not(.masonry)").width();
+                $(".card.masonry").css("height",spacerHeight).css("width",spacerWidth).css("margin",0);
+
+                var midSpacerLeft = $(".card:nth-child(2)").offset().left;
+                var midSpacerTop = $(".card:nth-child(2)").offset().top - $(".masonry").height() - 50;
+                $("#spacer1").css("left", midSpacerLeft).css("top", midSpacerTop);
+
+                var spacer2Left = 10;
+                var spacer2Top = $(".cards-container").offset().top + $(".cards-container").height() + 10;
+                $("#spacer2").css("left",spacer2Left).css("top",spacer2Top);
+
+                var spacer3Left = $(".cards-container").width() - 30 - $(".card").width();
+                $("#spacer3").css("left",spacer3Left).css("top",spacer2Top);
+                
+                console.log("finished");
+            }
+            
+            adjustMasonry();
+            
+            var viewTop = $(window).scrollTop();
+            var viewBottom = viewTop + $(window).height();
+            
+            $(".card").each(function(){
+                var elemTop = $(this).offset().top;
+                            
+                if (!(elemTop > viewTop && elemTop <= viewBottom)) {
+                    $(this).data("top-origin", $(this).css("top")).data("loaded",false);
+                    //$(this).css("top","+=50").css("opacity",0);
+                    $(this).css("opacity",0);
+                } else {
+                    $(this).data("loaded",true);
+                }
+            });
+            
+            $(window).on("resize",function(){
+                console.log("run");
+                adjustMasonry();
+            });
             
             $(window).on("scroll",function(){
                 viewTop = $(window).scrollTop();
@@ -243,12 +275,23 @@
                 $(".card").each(function(){
                     var elemTop = $(this).offset().top;
                     var elemBottom = elemTop + $(this).height();
+                    
+                    if (elemTop > viewTop && elemBottom <= viewBottom && !($(this).data("loaded"))) {
+                        $(this).data("top-origin", $(this).css("top")).data("loaded",true);
+                        $(this).css("top","+=50");
+                        
+                        $(this).animate({
+                            opacity: 1,
+                            top: $(this).data("top-origin")
+                        }, 1000);
+                    }
+                    /*
                     if (elemTop > viewTop && elemBottom <= viewBottom) {
                         $(this).animate({
                             opacity: 1,
                             top: $(this).data("top-origin")
-                        }, 500)
-                    }
+                        }, 1000);
+                    }*/
                 });
             });
         </script>
