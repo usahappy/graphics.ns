@@ -26,15 +26,15 @@ body {
     letter-spacing: 30px;
 }
 
+.tagline {
+    height: auto;
+}
+
 .tagline p {
     position: relative;
-    top: 50%;
-    transform: translate(0,-50%);
-
     width: 90%;
     max-width: 1300px;
-
-    margin: 0 auto;
+    margin: 50px auto;
     text-align: justify;
     text-align-last: center;
 
@@ -43,6 +43,9 @@ body {
 }
 
 .cards-container {
+    position: relative;
+    top: 0;
+    display: block;
     width: calc(100% - 20px);
     margin: 10px auto;
     column-count: 3;
@@ -56,6 +59,7 @@ body {
 }
 
 .card p#message {
+    text-align: center;
     margin-bottom: 15px;
 }
 
@@ -64,7 +68,13 @@ body {
     text-align: right;
 }
 
-
+.footer p {
+    font-weight: 300;
+    font-size: 14pt;
+    margin-right: 20px;
+    color: white;
+    text-align: right;
+}
 
 @media screen and (max-width: 1920px) {
     .headline {
@@ -116,7 +126,7 @@ body {
     }
 }
             
-@media screen and (max-aspect-ratio: 3/4) { /* MOBILE: MOVE TO 1 COLUMN */
+@media screen and (max-aspect-ratio: 1/1) { /* MOBILE: MOVE TO 1 COLUMN */
     .cards-container {
         column-count: 1;
     }
