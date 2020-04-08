@@ -3,172 +3,18 @@
     <head>
         <title>Thank You | Emory RHA</title>
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="app.js"></script>
+        
         <link rel="stylesheet" href="https://use.typekit.net/bdf8vqg.css">
         <link rel="stylesheet" href="https://rha.nicholasskelley.com/main.css">
+        <link rel="stylesheet" href="main.css">
         
         <link rel="icon" type="image/png" href="images/black-brandmark@1k.png" media="(prefers-color-scheme: light)">
         <link rel="icon" type="image/png" href="images/white-brandmark@1k.png" media="(prefers-color-scheme: dark)">
         
         <link rel="preload" href="images/headline1.jpg" as="image/jpg">
-        
-        <style>
-            * {
-                --headline-red: #fa1e4ae6;
-                --red: #fa1e4a;
-            }
-            
-            body {
-                background: #141414;
-            }
-            
-            .headline {
-                background: linear-gradient(var(--headline-red),var(--headline-red)), url(images/headline1.jpg);
-                background-size: 100% auto;
-                background-position: left 50% top -180px;
-            }
-            
-            .headline img {
-                position: relative;
-                top: 60px;
-                height: 50px;
-            }
-            .headline h1 {
-                position: relative;
-                top: calc(50% - 20px);
-                transform: translate(0,-50%);
-                letter-spacing: 30px;
-            }
-            
-            .tagline p {
-                position: relative;
-                top: 50%;
-                transform: translate(0,-50%);
-                
-                width: 90%;
-                max-width: 1300px;
-                
-                margin: 0 auto;
-                text-align: justify;
-                text-align-last: center;
-                
-                color: white;
-                font-size: 24pt;
-            }
-            
-            .cards-container {
-                width: calc(100% - 20px);
-                margin: 10px auto;
-                padding-bottom: 100px;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: 200px;
-                column-gap: 10px;
-                grid-row-gap: 10px;
-            }
-            
-            .card {
-                position: relative;
-                display: block;
-                background: white;
-                padding: 20px;
-            }
-            
-            .card p {
-                text-align: center;
-                position: relative;
-                top: calc(50% - 20px);
-                transform: translate(0,-50%);
-            }
-            
-            @media screen and (max-width: 1920px) {
-                .headline {
-                    background-size: 1920px auto;
-                }
-            }
-            
-            @media screen and (max-width: 1640px) {
-                .headline {
-                    background-size: 1640px auto;
-                    background-position: left 50% top -150px;
-                }
-            }
-            
-            @media screen and (min-width: 1360px) {
-                /* MASONRY FILLERS */
-                .card.masonry { /* MUST EDIT TO BE THE LAST CENTER CARD */
-                    display: block;
-                    position: absolute;
-                    background: white;
-                }
-                /* END OF MASONRY FILLERS */
-                
-                .card:nth-child(3n + 2):not(.masonry) {
-                    top: 100px !important;
-                }
-            }
-            
-            @media screen and (max-width: 1360px) {
-                .headline {
-                    background-size: 1360px auto;
-                    background-position: left 50% top -125px;
-                }
-                
-                .tagline p {
-                    font-size: 22pt;
-                }
-                
-                .cards-container {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                
-                .card:nth-child(3n+2) {
-                    top: 0 !important;
-                }
-                
-                .card:nth-child(3n) {
-                    grid-column-end: span 2;
-                }
-                
-                .card.masonry {
-                    display: none;
-                }
-            }
-            
-            @media screen and (max-width: 1160px) {
-                .headline {
-                    background-size: 1160px auto;
-                    background-position: left 50% top -105px;
-                }
-                
-                h1 {
-                    font-size: 72pt;
-                    letter-spacing: 20px;
-                }
-                
-                .tagline p {
-                    font-size: 20pt;
-                }
-            }
-            
-            @media screen and (max-aspect-ratio: 3/4) {
-                .cards-container {
-                    grid-template-columns: 1fr;
-                }
-                
-                .card:nth-child(3n) {
-                    grid-column-end: span 1;
-                }
-                
-                h1 {
-                    font-size: 52pt;
-                }
-                
-                .tagline p {
-                    font-size: 14pt;
-                }
-            }
-        </style>
     </head>
     <body>
         <div class="headline">
@@ -181,119 +27,41 @@
         
         <div class="cards-container">
             <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+                <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et malesuada.aLorem ipsum dolor sit ameta</p>
+                <p id="name">John Doe</p>
+                <p id="school">Emory College of Arts and Sciences</p>
+                <p id="gradYear">Class of 2022</p>
             </div>
             <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+                <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p id="name">John Doe</p>
+                <p id="school">Emory College of Arts and Sciences</p>
+                <p id="gradYear">Class of 2022</p>
             </div>
             <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+                <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et malesuada.aLorem ipsum dolor sit ameta</p>
+                <p id="name">John Doe</p>
+                <p id="school">Emory College of Arts and Sciences</p>
+                <p id="gradYear">Class of 2022</p>
             </div>
             <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+                <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p id="name">John Doe</p>
+                <p id="school">Emory College of Arts and Sciences</p>
+                <p id="gradYear">Class of 2022</p>
             </div>
             <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+                <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p id="name">John Doe</p>
+                <p id="school">Emory College of Arts and Sciences</p>
+                <p id="gradYear">Class of 2022</p>
             </div>
             <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card">
-                <p>This is a thank you note. Lorem ipsum dolor sit amet.</p>
+                <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et malesuada.aLorem ipsum dolor sit ameta</p>
+                <p id="name">John Doe</p>
+                <p id="school">Emory College of Arts and Sciences</p>
+                <p id="gradYear">Class of 2022</p>
             </div>
         </div>
-        
-        <div class="card masonry" id="spacer1"></div>
-        <div class="card masonry" id="spacer2"></div>
-        <div class="card masonry" id="spacer3"></div>
-        
-        <script>
-            
-            window.matchMedia("(prefers-color-scheme:dark)").addListener(function(e) {
-                console.log(e.matches);
-                if (e.matches) {
-                    var newIcon = '<link rel="icon" href="images/white-brandmark@1k">';
-                    $("head").append(newIcon);
-                } else if (!e.matches) {
-                    var newIcon = '<link rel="icon" href="images/black-brandmark@1k">';
-                    $("head").append(newIcon);
-                }
-            });
-            
-            
-            function adjustMasonry() {
-                var spacerHeight = ($(".card:not(.masonry)").height()/2) - 30;
-                var spacerWidth = $(".card:not(.masonry)").width();
-                $(".card.masonry").css("height",spacerHeight).css("width",spacerWidth).css("margin",0);
-
-                var midSpacerLeft = $(".card:nth-child(2)").offset().left;
-                var midSpacerTop = $(".card:nth-child(2)").offset().top - $(".masonry").height() - 50;
-                $("#spacer1").css("left", midSpacerLeft).css("top", midSpacerTop);
-
-                var spacer2Left = 10;
-                var spacer2Top = $(".cards-container").offset().top + $(".cards-container").height() + 10;
-                $("#spacer2").css("left",spacer2Left).css("top",spacer2Top);
-
-                var spacer3Left = $(".cards-container").width() - 30 - $(".card").width();
-                $("#spacer3").css("left",spacer3Left).css("top",spacer2Top);
-                
-                console.log("finished");
-            }
-            
-            adjustMasonry();
-            
-            var viewTop = $(window).scrollTop();
-            var viewBottom = viewTop + $(window).height();
-            
-            $(".card").each(function(){
-                var elemTop = $(this).offset().top;
-                            
-                if (!(elemTop > viewTop && elemTop <= viewBottom)) {
-                    $(this).data("top-origin", $(this).css("top")).data("loaded",false);
-                    //$(this).css("top","+=50").css("opacity",0);
-                    $(this).css("opacity",0);
-                } else {
-                    $(this).data("loaded",true);
-                }
-            });
-            
-            $(window).on("resize",function(){
-                console.log("run");
-                adjustMasonry();
-            });
-            
-            $(window).on("scroll",function(){
-                viewTop = $(window).scrollTop();
-                viewBottom = viewTop + $(window).height();
-                
-                $(".card").each(function(){
-                    var elemTop = $(this).offset().top;
-                    var elemBottom = elemTop + $(this).height();
-                    
-                    if (elemTop > viewTop && elemBottom <= viewBottom && !($(this).data("loaded"))) {
-                        $(this).data("top-origin", $(this).css("top")).data("loaded",true);
-                        $(this).css("top","+=50");
-                        
-                        $(this).animate({
-                            opacity: 1,
-                            top: $(this).data("top-origin")
-                        }, 1000);
-                    }
-                    /*
-                    if (elemTop > viewTop && elemBottom <= viewBottom) {
-                        $(this).animate({
-                            opacity: 1,
-                            top: $(this).data("top-origin")
-                        }, 1000);
-                    }*/
-                });
-            });
-        </script>
     </body>
 </html>

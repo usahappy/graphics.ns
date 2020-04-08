@@ -1,0 +1,131 @@
+* {
+    --headline-red: #fa1e4ad9;
+    --red: #fa1e4a;
+}
+
+body {
+    background: #141414;
+}
+
+.headline {
+    background: linear-gradient(var(--headline-red),var(--headline-red)), url(images/headline1.jpg);
+    background-size: 100% auto;
+    background-position: left 50% top -180px;
+}
+
+.headline img {
+    position: relative;
+    top: 60px;
+    height: 50px;
+}
+
+.headline h1 {
+    position: relative;
+    top: calc(50% - 20px);
+    transform: translate(0,-50%);
+    letter-spacing: 30px;
+}
+
+.tagline p {
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+
+    width: 90%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: center;
+
+    color: white;
+    font-size: 24pt;
+}
+
+.cards-container {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    column-count: 3;
+}
+
+.card {
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 20px;
+    background-color: white;
+}
+
+.card p#message {
+    margin-bottom: 15px;
+}
+
+.card p:not(#message) {
+    font-size: 16pt;
+    text-align: right;
+}
+
+
+
+@media screen and (max-width: 1920px) {
+    .headline {
+        background-size: 1920px auto;
+    }
+}
+            
+@media screen and (max-width: 1640px) {
+    .headline {
+        background-size: 1640px auto;
+        background-position: left 50% top -150px;
+    }
+}
+            
+@media screen and (min-width: 1360px) { /* MOVE FROM 2 TO 3 COLUMNS */
+    .cards-container {
+        column-count: 3;
+    }
+}
+          
+@media screen and (max-width: 1360px) { /* TOO SMALL FOR 3 COLUMNS --> DO 2 */
+    .headline {
+        background-size: 1360px auto;
+        background-position: left 50% top -125px;
+    }
+
+    .tagline p {
+        font-size: 22pt;
+    }
+
+    .cards-container {
+        column-count: 2;
+    }
+}
+            
+@media screen and (max-width: 1160px) {
+    .headline {
+        background-size: 1160px auto;
+        background-position: left 50% top -105px;
+    }
+
+    h1 {
+        font-size: 72pt;
+        letter-spacing: 20px;
+    }
+
+    .tagline p {
+        font-size: 20pt;
+    }
+}
+            
+@media screen and (max-aspect-ratio: 3/4) { /* MOBILE: MOVE TO 1 COLUMN */
+    .cards-container {
+        column-count: 1;
+    }
+
+    h1 {
+        font-size: 52pt;
+    }
+
+    .tagline p {
+        font-size: 14pt;
+    }
+}

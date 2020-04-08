@@ -1,0 +1,16 @@
+{
+    cards : [
+    {
+        "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et malesuada. Nec ullamcorper sit amet risus nullam eget felis eget nunc. Et tortor at risus viverra. Diam quis enim lobortis scelerisque fermentum dui. In iaculis nunc sed augue lacus viverra. Enim sed faucibus turpis in. Gravida neque convallis a cras semper auctor neque vitae.",
+        "name" : "John Doe",
+        "school" : "Emory College",
+        "gradYear" : "2020"
+    },
+    {
+        "message" : "This is the first thank you message. I really hope these aren't long because I can't fit a lot of text on these cards, especially with the name, school, and graduation year.",
+        "name" : "John Doe",
+        "school" : "Emory College",
+        "gradYear" : "2020"
+    }
+    ]
+}
