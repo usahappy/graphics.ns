@@ -42,6 +42,10 @@ body {
     font-size: 24pt;
 }
 
+a {
+    color: var(--yellow);
+}
+
 .cards-container {
     position: relative;
     top: 0;
@@ -54,6 +58,7 @@ body {
 .card {
     margin-bottom: 15px;
     display: inline-block;
+    width: calc(100% - 40px);
     padding: 20px;
     background-color: white;
 }
@@ -136,6 +141,6 @@ body {
     }
 
     .tagline p {
-        font-size: 14pt;
+        font-size: 16pt;
     }
 }
