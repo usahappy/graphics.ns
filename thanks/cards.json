@@ -194,8 +194,8 @@
     },
     {
         "message":"Dr. Gilchrist is awesome and unstoppable! I love her commitment to her class and the topics we cover.",
-        "name":" ",
-        "gradYear":"Faculty",
+        "name":"Faculty",
+        "gradYear":"",
         "school":"Nell Hodgson Woodruff School of Nursing"
     },
     {
@@ -371,6 +371,30 @@
         "name":"",
         "gradYear":"2020",
         "school":"Emory College of Arts and Sciences"
+    },
+    {
+        "message":"Thank you Alex Koo for all you do!!",
+        "name":"",
+        "gradYear":"2021",
+        "school":"Emory College of Arts and Sciences"
+    },
+    {
+        "message":"Although it is easy to be angry at Emory for the cancellation of classes and move to online. I really trust they did and are continuing to make the absolute best decisions in response to the COVID-19 crisis. I fully believe they care deeply about  students, faculty and staff. The ways in which they helped me and supported me during this time of transition has made all the difference in the world to me. And has been the stability I can cling to. Thank you Emory administration, faculty, and staff for going so far above and beyond for students!!! Your relentless work does not go unnoticed. Also thank you administration for advising professors to have empathy, compassion, and patience for students. All of my professors really listened to that advice and went out of their way to make sure I was ok. All of you at Emory give me hope in humanity!!",
+        "name":"",
+        "gradYear":"2020",
+        "school":"Emory College of Arts and Sciences"
+    },
+    {
+        "message":"Thank you to the great people that continue to clean our campus, let students into rooms when they lock themselves out, who offer to pack, ship/store their belongings, who prepare and deliver food to Clairmont, who still come work everyday at Kaldis, Cox, and Starbucks, who fix the sinks, toilets, and air conditioners when they break, who drive the buses connecting people to different places, the nurses, PA's, and doctors who take care of students' physical health, and the counselors, res life staff, spiritual and religious life team, and countless others who look after students in so many other ways.  This. Is.  One.  Emory.  ",
+        "name":"Staff",
+        "gradYear":"",
+        "school":"Emory University"
+    },
+    {
+        "message":"Thank you for all the staff who worked non-stop to take on additional roles to make sure student engagement was available and allowed students to remain connected, even though they are apart. Thank you to the staff who feel overlooked, but work hard behind the scenes! You are appreciated.",
+        "name":"Campus Life",
+        "gradYear":"2020",
+        "school":"Emory University"
     }
     ]
 }
