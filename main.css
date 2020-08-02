@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    font-family: 'Effra', sans-serif;
+}
+
+.headline {
+    height: 700px;
+    background: linear-gradient(to bottom, #333366D9, #ED1B69D9), url(images/headline.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.headline #logo {
+    width: 35%;
+    max-height: 200px;
+    object-fit: contain;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 110px));
+}
+
+.headline #curve-headline {
+    fill: white;
+    display: inline;
+    position: relative;
+    top: calc(100% + 1px);
+    transform: translate(0,-100%);
+}
+
+.navbar {
+    display: inline;
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    letter-spacing: 0.5px;
+}
+
+.navbar ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 15px;
+}
+
+.navbar ul li {
+    display: inline;
+    float: left;
+    font-size: 16pt;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+
+.navbar a {
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 inset white;
+    transition: box-shadow 0.2s;
+}
+
+.navbar a:hover {
+    box-shadow: 0 -5px inset white;
+}
+
+.content#intro-involve {
+    padding-top: 60px;
+    background: linear-gradient(white, var(--rha-light-gray));
+    display: block;
+    overflow: hidden;
+}
+
+.content#programming {
+    position: relative;
+    top: -100px;
+}
+
+.content#programming::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--rha-light-gray);
+    z-index: -1;
+}
+
+.content#programming .post-curve-content-container {
+    background: var(--rha-sunset-gradient);
+    z-index: 1;
+}
+
+#programming h2 {
+    color: white;
+}
+
+#programming p {
+    color: white;
+}
+svg#curve-content-programming {
+    display: inline;
+    margin-bottom: -11px;
+    fill: var(--rha-navy);
+    overflow: hidden;
+}

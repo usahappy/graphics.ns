@@ -1,0 +1,124 @@
+* {
+    --rha-orange: #f26739;
+    --rha-pink: #d26ba3;
+    --rha-navy: #333366;
+    --rha-magenta: #ed1b69;
+    --rha-daisy: #ffcc66;
+    --rha-lavender: #cfcce6;
+    --rha-light-gray: #eaeaea;
+    --rha-charcoal: #141414;
+    
+    --rha-peach-gradient: linear-gradient(var(--rha-orange), var(--rha-magenta));
+    --rha-coral-gradient: linear-gradient(var(--rha-orange), var(--rha-pink));
+    --rha-gold-gradient: linear-gradient(var(--rha-orange), var(--rha-daisy));
+    --rha-blue-gradient: linear-gradient(var(--rha-navy), var(--rha-lavender));
+    --rha-purple-gradient: linear-gradient(var(--rha-navy), var(--rha-pink));
+    --rha-sunset-gradient: linear-gradient(var(--rha-navy), var(--rha-magenta));
+    
+    --rha-peach-gradient-flipped: linear-gradient(to top, var(--rha-orange), var(--rha-magenta));
+    --rha-coral-gradient-flipped: linear-gradient(to top, var(--rha-orange), var(--rha-pink));
+    --rha-gold-gradient-flipped: linear-gradient(to top, var(--rha-orange), var(--rha-daisy));
+    --rha-blue-gradient-flipped: linear-gradient(to top, var(--rha-navy), var(--rha-lavender));
+    --rha-purple-gradient-flipped: linear-gradient(to top, var(--rha-navy), var(--rha-pink));
+    --rha-sunset-gradient-flipped: linear-gradient(to top, var(--rha-navy), var(--rha-magenta));
+    
+    --rha-peach-gradient-left: linear-gradient(to left, var(--rha-orange), var(--rha-magenta));
+    --rha-coral-gradient-left: linear-gradient(to left, var(--rha-orange), var(--rha-pink));
+    --rha-gold-gradient-left: linear-gradient(to left, var(--rha-orange), var(--rha-daisy));
+    --rha-blue-gradient-left: linear-gradient(to left, var(--rha-navy), var(--rha-lavender));
+    --rha-purple-gradient-left: linear-gradient(to left, var(--rha-navy), var(--rha-pink));
+    --rha-sunset-gradient-left: linear-gradient(to left, var(--rha-navy), var(--rha-magenta));
+    
+    --rha-peach-gradient-right: linear-gradient(to right, var(--rha-orange), var(--rha-magenta));
+    --rha-coral-gradient-right: linear-gradient(to right, var(--rha-orange), var(--rha-pink));
+    --rha-gold-gradient-right: linear-gradient(to right, var(--rha-orange), var(--rha-daisy));
+    --rha-blue-gradient-right: linear-gradient(to right, var(--rha-navy), var(--rha-lavender));
+    --rha-purple-gradient-right: linear-gradient(to right, var(--rha-navy), var(--rha-pink));
+    --rha-sunset-gradient-right: linear-gradient(to right, var(--rha-navy), var(--rha-magenta));
+    
+    color: var(--rha-charcoal);
+}
+
+h2.section-title {
+    line-height: 0;
+    text-transform: uppercase;
+    font-size: 58pt;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2.section-title::before {
+    content: '';
+    height: 39pt;
+    width: 17px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right, var(--rha-orange) -100%, var(--rha-magenta) 400%);
+    margin: 0 15px;
+}
+
+h2.section-title::after {
+    content: '';
+    height: 39pt;
+    width: 17px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to left, var(--rha-orange) -100%, var(--rha-magenta) 400%);
+    margin: 0 15px;
+}
+
+p {
+    line-height: 1.25;
+    width: calc(95% - 40px);
+    margin: 0 auto;
+    font-size: 17pt;
+    max-width: 1200px;
+    min-width: 500px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+a.action-btn {
+    margin-top: 25px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 1px 15px;
+    font-size: 20pt;
+    font-weight: 600;
+    position: relative;
+    left: 50%;
+    transform: translate(calc(-50% - 10px),0);
+    overflow: hidden;
+    background: linear-gradient(to top, var(--rha-orange) -200%, var(--rha-magenta) 300%);
+    color: white;
+    transition: all 0.2s;
+    
+    z-index: 10;
+}
+
+a.action-btn:hover {
+    padding: 1px 25px;
+    box-shadow: 0 2px 10px #00000044;
+}
+
+.action-btn::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background: var(--rha-gold-gradient-flipped);
+    transition: all 0.2s linear;
+    z-index: -1;
+}
+
+.action-btn:hover::after {
+    width: 150%;
+    height: 300%;
+}
