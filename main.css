@@ -6,7 +6,8 @@
 .headline {
     height: 700px;
     background: linear-gradient(to bottom, #333366D9, #ED1B69D9), url(images/headline.jpg);
-    background-size: 100% auto;
+    background-size: cover;
+    background-position: center bottom 0;
     background-repeat: no-repeat;
     overflow: hidden;
 }
@@ -74,12 +75,12 @@
     overflow: hidden;
 }
 
-.content#programming {
+.content#programming-content {
     position: relative;
     top: -100px;
 }
 
-.content#programming::before {
+.content#programming-content::before {
     content: '';
     position: absolute;
     top: 0;
@@ -90,21 +91,39 @@
     z-index: -1;
 }
 
-.content#programming .post-curve-content-container {
-    background: var(--rha-sunset-gradient);
+.content#programming-content .post-curve-content-container {
+    padding-top: 80px;
+    background: linear-gradient(var(--rha-navy), #ed1b69b8 120%), url(images/event.jpg);
+    background-size: cover;
+    background-position: center top 0;
     z-index: 1;
 }
 
-#programming h2 {
+#programming-content h2 {
     color: white;
 }
 
-#programming p {
+#programming-content p {
     color: white;
 }
+
 svg#curve-content-programming {
-    display: inline;
-    margin-bottom: -11px;
+    display: block;
+    margin-bottom: -1px;
     fill: var(--rha-navy);
     overflow: hidden;
+}
+
+svg#post-programming-curve {
+    display: block;
+    position: relative;
+    margin-top: -150px;
+    fill: var(--rha-orange)
+}
+
+#advocacy-content {
+    display: block;
+    position: relative;
+    top: -100px;
+    background: var(--rha-gold-gradient);
 }

@@ -70,11 +70,8 @@ h2.section-title::after {
 
 p {
     line-height: 1.25;
-    width: calc(95% - 40px);
     margin: 0 auto;
     font-size: 17pt;
-    max-width: 1200px;
-    min-width: 500px;
     padding: 0;
     margin-top: 10px;
 }
@@ -121,4 +118,14 @@ a.action-btn:hover {
 .action-btn:hover::after {
     width: 150%;
     height: 300%;
+}
+
+.content-container {
+    width: calc(90% - 20px);
+    max-width: 1100px;
+    min-width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 25px;
 }
