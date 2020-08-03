@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    font-family: 'Effra', sans-serif;
-}
-
 body {
     background: var(--rha-charcoal);
 }
@@ -25,54 +20,26 @@ body {
     transform: translate(-50%, calc(-50% - 110px));
 }
 
+.headline .loop-container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.headline .loop {
+    width: 800px;
+    left: calc(100% - 400px);
+    top: calc(100% - 900px);
+    transform: rotate(5deg);
+}
+
 .headline #curve-headline {
     fill: white;
     display: inline;
     position: relative;
     top: calc(100% + 1px);
     transform: translate(0,-100%);
-}
-
-.navbar#mobile {
-    display: none;
-}
-
-.navbar {
-    display: inline;
-    position: absolute;
-    top: 60px;
-    left: 100px;
-    letter-spacing: 0.5px;
-}
-
-.navbar#desktop ul {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    grid-column-gap: 15px;
-}
-
-.navbar#desktop ul li {
-    display: inline;
-    float: left;
-    font-size: 16pt;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 0 5px;
-}
-
-.navbar#desktop a {
-    font-weight: 700;
-    text-decoration: none;
-    color: white;
-    box-shadow: 0 0 inset white;
-    transition: box-shadow 0.2s;
-}
-
-.navbar#desktop a:hover {
-    box-shadow: 0 -5px inset white;
+    z-index: 1;
 }
 
 .content#intro-involve {
@@ -136,6 +103,11 @@ svg#footer-curve {
 
 
 @media screen and (max-width: 1200px) {
+    .headline .loop {
+        width: 600px;
+        left: calc(100% - 400px);
+        top: calc(100% - 700px);
+    }
     .content#programming-content {
         top: -50px;
     }
@@ -148,12 +120,31 @@ svg#footer-curve {
     .footer {
         margin-top: -20px!important;
     }
-    .navbar {
-        left: 75px;
+}
+
+@media screen and (max-width: 800px) {
+    .content#programming-content {
+        top: -30px;
+    }
+    svg#post-programming-curve {
+        margin-top: -35px;
+    }
+    #advocacy-content {
+        padding-top: 20px;
+        top: -31px;
+    }
+    .footer {
+        margin-top: -20px!important;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
+    .headline .loop {
+        width: 450px;
+        left: calc(100% - 300px);
+        top: calc(100% - 550px);
+    }
+    
     .content#programming-content {
         top: -10px;
     }
@@ -172,88 +163,9 @@ svg#footer-curve {
     }
     
     .headline #logo {
-        height: 125px;
-        top: 30vh;
+        width: 60%;
+        min-width: 150px;
+        top: 25vh;
         transform: translate(-50%,0);
-    }
-    
-    .navbar#desktop {
-        display: none;
-    }
-    
-    .navbar#mobile {
-        display: block;
-        width: 100%;
-        height: 50px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: var(--rha-charcoal);
-        z-index: 10;
-    }
-    
-    .navbar#mobile input {
-        margin-top: 12.5px;
-        margin-right: 25px;
-        height: 25px;
-        width: 25px;
-        z-index: 2;
-        display: none;
-        float: right;
-    }
-    
-    .navbar#mobile #navbar-checker-image {
-        margin-top: 12.5px;
-        margin-right: 25px;
-        height: 25px;
-        width: 25px;
-        top: 0;
-        left: 0;
-        fill: white;
-        float: right;
-    }
-    
-    .navbar#mobile #navbar-mobile-menu {
-        position: relative;
-        top: 50px;
-        height: calc(100vh - 50px);
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    
-    .navbar#mobile ul {
-        display: block;
-        width: 100vw;
-        height: 100%;
-        position: relative;
-        background: linear-gradient(#ffcc66e9, #f26739e9), url(images/search.jpg);
-        background-size: cover;
-        background-position: center bottom 0;
-        list-style: none;
-        padding: 0;
-    }
-    
-    .navbar#mobile ul li {
-        text-align: center;
-        text-transform: uppercase;
-        color: white;
-        width: 100%;
-        font-size: 20pt;
-        overflow: hidden;
-        display: block;
-        margin-bottom: 10px;
-    }
-    
-    .navbar#mobile a {
-        text-decoration: none;
-        text-align: center;
-        color: white;
-        font-weight: 600;
-        display: block;
-        background: #ffcc661e;
-    }
-    
-    .navbar#mobile input:checked ~  #navbar-mobile-menu {
-        opacity: 1;
     }
 }
