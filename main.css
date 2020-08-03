@@ -3,6 +3,10 @@
     font-family: 'Effra', sans-serif;
 }
 
+body {
+    background: var(--rha-charcoal);
+}
+
 .headline {
     height: 700px;
     background: linear-gradient(to bottom, #333366D9, #ED1B69D9), url(images/headline.jpg);
@@ -99,14 +103,6 @@
     z-index: 1;
 }
 
-#programming-content h2 {
-    color: white;
-}
-
-#programming-content p {
-    color: white;
-}
-
 svg#curve-content-programming {
     display: block;
     margin-bottom: -1px;
@@ -125,5 +121,12 @@ svg#post-programming-curve {
     display: block;
     position: relative;
     top: -100px;
-    background: var(--rha-gold-gradient);
+    background: linear-gradient(var(--rha-orange), #ffcc6678 120%), url(images/advocacy.jpg);
+    background-size: cover;
+    background-position: center bottom 0;
+}
+
+svg#footer-curve {
+    display: block;
+    fill: var(--rha-charcoal);
 }

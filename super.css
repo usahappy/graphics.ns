@@ -68,6 +68,18 @@ h2.section-title::after {
     margin: 0 15px;
 }
 
+.white-text {
+    color: white;
+}
+
+h2.section-title.on-gold::before {
+    background: linear-gradient(to left, var(--rha-navy) -50%, var(--rha-lavender) 500%);
+}
+
+h2.section-title.on-gold::after {
+    background: linear-gradient(to right, var(--rha-navy) -50%, var(--rha-lavender) 500%);
+}
+
 p {
     line-height: 1.25;
     margin: 0 auto;
@@ -128,4 +140,106 @@ a.action-btn:hover {
     left: 50%;
     transform: translate(-50%,0);
     margin-top: 25px;
+}
+
+.footer {
+    position: relative;
+    margin-top: -70px;
+    background: var(--rha-charcoal);
+}
+
+.footer #footer-grid-container {
+    display: grid;
+    position: relative;
+    left: 40px;
+    width: 700px;
+    grid-template-columns: repeat(3,1fr);
+    margin-bottom: 40px;
+}
+
+.footer ul {
+    padding: 0;
+}
+
+.footer .footer-links a, .footer a#email-link {
+    margin: 0;
+    min-height: 0;
+    text-decoration: none;
+}
+
+.footer-links p, a#email-link p {
+    color: white;
+    display: inline-block;
+    font-size: 14pt;
+    padding: 0 2px;
+    margin: 0;
+    padding-top: 2px;
+    box-shadow: 0 -2px 0 inset white;
+    transition: box-shadow 0.1s;
+    background: var(--rha-gold-gradient-right);
+    -webkit-background-clip: text;
+}
+
+.footer .footer-links a:hover p, a#email-link:hover p {
+    box-shadow: 0 0 0 inset white;
+    color: transparent;
+}
+
+.social-icons {
+    display: grid;
+    grid-template-columns: repeat(2,50px);
+    grid-column-gap: 22.5px;
+}
+
+.social-icons li {
+    display: block;
+}
+
+.social-icons svg {
+    display: block;
+    fill: url(#white-gradient);
+    width: 45px;
+    height: 45px;
+}
+
+.social-icons #facebook svg {
+    display: block;
+    fill: url(#white-gradient2);
+    width: 45px;
+    height: 45px;
+}
+
+.social-icons svg stop {
+    transition: 0.2s;
+}
+
+.social-icons a:hover svg stop:first-child {
+    stop-color: var(--rha-orange);
+}
+
+.social-icons a:hover svg stop:last-child {
+    stop-color: var(--rha-daisy);
+}
+
+.closing-footer {
+    display: flex;
+    position: relative;
+    top: -25px;
+}
+
+.copyright {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 14pt;
+    color: white;
+    vertical-align: top;
+    flex-basis: calc(50% - 5px);
+    align-self: flex-end;
+}
+
+.footer-logo {
+    flex-basis: 150px;
+    width: 150px;
+    left: calc(50% - 250px);
+    position: relative;
 }
