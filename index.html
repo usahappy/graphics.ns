@@ -5,18 +5,32 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="super.css">
         <link rel="stylesheet" href="https://use.typekit.net/bdf8vqg.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="headline">
             <svg id="curve-headline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 76"><path class="cls-1" d="M1366,76.5V54.11s-72.55,12.53-245.68,12.53S581.43.5,360.26.5,0,66.64,0,66.64V76.5Z" transform="translate(0 -0.5)"/></svg>
             <img id="logo" src="images/RHA_LogoStacked_2k_White.png">
         </div>
-        <div class="navbar">
+        <div class="navbar" id="desktop">
             <ul>
                 <li id="home">Home</li>
                 <li id="about"><a href="#">About</a></li>
                 <li id="contact"><a href="#">Contact</a></li>
             </ul>
+        </div>
+        
+        <div class="navbar" id="mobile">
+            <input id="navbar-opener" type="checkbox">
+            <label for="navbar-opener"><svg id="navbar-checker-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100"><rect width="120" height="25"/><rect y="37.5" width="120" height="25"/><rect y="75" width="120" height="25"/></svg></label>
+            <div id="navbar-mobile-menu">
+                <ul>
+                    <li>Home</li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
         </div>
         
         <div class="content" id="intro-involve">
@@ -49,7 +63,7 @@
             <svg id="footer-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 96"><path class="cls-1" d="M0,0,80,16c80,16,240,48,400,53.3C640,75,800,53,960,37.3,1120,21,1280,11,1360,5.3L1440,0V96H0Z"/></svg>
         </div>
         
-        <div class="footer">
+        <div class="footer desktop">
             <div id="footer-grid-container">
                 <ul class="footer-links">
                     <li><a href="#"><p>Events</p></a></li>
@@ -87,9 +101,13 @@
             </div>
         </div>
         
-        <div class="closing-footer">
+        <div class="footer mobile">
+            <a id="email-link" href="mailto:rhaemory@gmail.com"><p>Send us an email</p></a>
+        </div>
+        
+        <div class="closing-footer desktop">
             <p class="copyright">&copy; 2020 Emory Residence Hall Association</p>
-        <img class="footer-logo" src="images/RHA_LogoStacked_2k_White.png">
+        <img class="footer-logo" src="images/RHA_LogoStacked_2k_White.png" id="desktop-logo">
         </div>
     </body>
 </html>
